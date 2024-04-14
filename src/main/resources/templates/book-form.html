@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Books Form</title>
+    </head>
+    <body>
+        <form action="#" th:action="@{/books/processBook}" th:object="${book}" method="POST">
+            <input type="hidden" th:field="*{id}">
+
+            <input type="text" th:field="*{author}" placeholder="Author">
+            <br>
+            <input type="text" th:field="*{title}" placeholder="Title">
+            <br>
+            <input type="text" th:field="*{genre}" placeholder="Genre">
+            <br>
+            <button type="submit">Save</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Books Directory</title>
+    </head>
+    <body>
+
+        <a th:href="@{/books/showFormForAdd}">Add Book</a>
+
+        <br>
+
+        <table>
+            <thead>
+                <th>Author</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                <tr th:each="tempBook : ${books}">
+                    <td th:text="${tempBook.author}"/>
+                    <td th:text="${tempBook.title}"/>
+                    <td th:text="${tempBook.genre}"/>
+                    <td>
+                        <a th:href="@{/books/showFormForUpdate(id=${tempBook.id})}">Update</a>
+                    </td>
+                    <td>
+                        <a th:href="@{/books/delete(id=${tempBook.id})}">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
